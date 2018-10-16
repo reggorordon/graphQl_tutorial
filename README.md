@@ -44,13 +44,19 @@ end
 
 to the routes.rb file
 
+In terminal:
 
+```
 rails g graphql:install
+```
 
+and then 
+```
 bundle install
+```
 
 
-Then go on as normal
+Then go on as normal :) 
 
 
 
