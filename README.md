@@ -11,7 +11,7 @@ this creates a lighter app but it has limitations
 Add:
 
 
-gem 'graphql'
+```gem 'graphql'
 
 gem 'graphiql-rails', group: :development
 gem 'sass-rails', '~> 5.0'
@@ -26,6 +26,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'`
+```
 
 to the existing Gem file and bundle install
 
