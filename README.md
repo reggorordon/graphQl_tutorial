@@ -1,24 +1,41 @@
-# README
+This is a basic Rails API with Graphiql installed to allow for local testing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails APIs do not install Graphiql by default so it takes some jiggery pokery to get it up and running
 
-Things you may want to cover:
+Basic Set up:
 
-* Ruby version
+Rails new APPNAME --api
 
-* System dependencies
+this creates a lighter app but it has limitations
 
-* Configuration
+Add:
 
-* Database creation
 
-* Database initialization
+gem 'graphql'
 
-* How to run the test suite
+gem 'graphiql-rails', group: :development
+gem 'sass-rails', '~> 5.0'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'mini_racer', platforms: :ruby
 
-* Services (job queues, cache servers, search engines, etc.)
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.2'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.5'`
 
-* Deployment instructions
+to the existing Gem file and bundle install
 
-* ...
+
+rails g graphql:install
+
+bundle install
+
+
+Then go on as normal
+
+
+
