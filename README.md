@@ -11,8 +11,8 @@ this creates a lighter app but it has limitations
 Add:
 
 
-```gem 'graphql'
-
+```
+gem 'graphql'
 gem 'graphiql-rails', group: :development
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +29,20 @@ gem 'jbuilder', '~> 2.5'`
 ```
 
 to the existing Gem file and bundle install
+
+
+add:
+```
+Rails.application.routes.draw do
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
+```
+
+to the routes.rb file
 
 
 rails g graphql:install
