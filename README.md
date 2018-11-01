@@ -58,5 +58,7 @@ bundle install
 
 Then go on as normal :) 
 
+Note:
+Nov 1st: There have been massive changes to the whoe GraphQl-Ruby Gem in the last few months rendering practically every online tutorial out of date. Please refer to the http://graphql-ruby.org/ docs if you are going to start exploring this. Truct me it will save you days of frustration!
 
 
