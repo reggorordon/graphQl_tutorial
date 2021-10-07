@@ -1,7 +1,7 @@
 title: "[KateSQL Request]"
 name: KateSQL request
 description: Making a request to be moved to KateSQL
-labels: "KateSQL Request"
+labels: "KateSQL Test"
 body:
   - type: markdown
     attributes:
