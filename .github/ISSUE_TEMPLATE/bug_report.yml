@@ -1,5 +1,4 @@
-title: "[KateSQL Request]"
-name: KateSQL request
+name: Blah Blah
 description: Making a request to be moved to KateSQL
 labels: "KateSQL Test"
 body:
@@ -11,7 +10,6 @@ body:
       value:  | 
         If you're having problems with CloudSQL, you can fill out this form to add yourself to the KateSQL waitlist.
         In 2022, CloudSQL will be deprecated in favour of KateSQL and all ProdPlatform apps will be migrated. 
-        **Important:** Please check if your repo is ready for migration by reviewing the requirements here: [KateSQL](https://database-platform.docs.shopify.io/katesql/migrating-from-cloudsql-to-katesql/requirements)
   - type: input
     attributes:
       label: App-name
@@ -65,7 +63,6 @@ body:
     id: setup
     attributes:
       label: DataBase Preparation
-      description: I have read  the information in the [repo](https://database-platform.docs.shopify.io/katesql/migrating-from-cloudsql-to-katesql/requirements) and my database is set up for movement to KateSQL
       options:
         - "Yes"
         - "No"
