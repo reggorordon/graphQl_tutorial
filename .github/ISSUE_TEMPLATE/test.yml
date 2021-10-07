@@ -1,0 +1,79 @@
+title: "[KateSQL Request]"
+name: KateSQL request
+description: Making a request to be moved to KateSQL
+labels: "KateSQL Request"
+body:
+  - type: markdown
+    attributes:
+      value: "## KateSQL Request"
+  - type: markdown
+    attributes:
+      value:  | 
+        If you're having problems with CloudSQL, you can fill out this form to add yourself to the KateSQL waitlist.
+        In 2022, CloudSQL will be deprecated in favour of KateSQL and all ProdPlatform apps will be migrated. 
+        **Important:** Please check if your repo is ready for migration by reviewing the requirements here: [KateSQL](https://database-platform.docs.shopify.io/katesql/migrating-from-cloudsql-to-katesql/requirements)
+  - type: input
+    attributes:
+      label: App-name
+      description: e.g. VideoBin - if your app has multiple databases please fill out this form multiple times, putting the DB name in parenthesis
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: CloudPortal Runtime Link
+      description: Please link to the exact instance e.g. `https://cloud-portal-apps-b-us-central1-2.shopifycloud.com/namespaces/videobin-production-unrestricted/runtime_instances`
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Team member who will own the migration
+      description: Slack handle and GitHub handle
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: How Big is the Database?
+      description: |
+        You can run the following SQL query inside the CloudPortal Read-Only console to find out:
+        ```
+        SELECT table_schema AS "Table", 
+        concat(ROUND(SUM(data_length + index_length) / 1024 / 1024/1024, 2)) AS "Size (GB)" 
+        FROM information_schema.TABLES 
+        WHERE table_schema NOT IN ('information_schema', 'performance_schema', 'mysql', 'sys')
+        GROUP BY table_schema;
+        ```
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: When would be a good time to move?
+      description: Be aware that data copy takes about 1 week per terabyte of data and migrations/LHMs cannot run while  data is being copied.
+    validations:
+      required: true
+  - type: checkboxes
+    id: reasons
+    attributes:
+      label: Why are you interested in moving to KateSQL?
+      description: check all that apply
+      options:
+        - label: Write performance issues with CloudSQL
+        - label: Read performance issues with CloudSQL
+        - label: Downtime issues with CloudSQL
+        - label: Need Sharding
+        - label: Need a new DB feature (explain in Other)
+  - type: dropdown
+    id: setup
+    attributes:
+      label: DataBase Preparation
+      description: I have read  the information in the [repo](https://database-platform.docs.shopify.io/katesql/migrating-from-cloudsql-to-katesql/requirements) and my database is set up for movement to KateSQL
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Any other info you need to share/ request?
+      
+        
+
